@@ -38,4 +38,7 @@ class Cart {
     }
 }
 
-const milk = new Product("milk", "dairy", 12341, 5.00);
+
+// create a new instance of a Cart
+let tracyCart = new Cart();
+tracyCart.addCartItem(meat, 1);

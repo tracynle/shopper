@@ -31,14 +31,35 @@ class Cart {
         }
     }
 
-    // TODO: write function to increase quantity of a cart item
+    increaseQuantity(product, increaseBy) {
+        const cartItem = this.items[product.name];
+
+        if (cartItem) {
+            cartItem.increaseQuantity(increaseBy);
+        }
+    }
     
     emptyCart() {
         this.items = {};
     }
 }
 
+/*
+// This is an example of "delegation"; delegating some action to something that should perform the actual action
+class Family {
+    constructor() {
+        this.dad = new Person();
+        this.mom = new Person();
+        this.son = new Person();
+    }
 
-// create a new instance of a Cart
-let tracyCart = new Cart();
-tracyCart.addCartItem(meat, 1);
+    eatDinner() {
+        this.dad.eatDinner();
+        this.mom.eatDinner();
+        this.son.eatDinner();
+    }
+}
+
+family.eatDinner()
+family.dad.eatDinner();
+*/

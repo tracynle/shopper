@@ -7,9 +7,13 @@ class CartItem {
     reduceQuantity(deductBy) {
         console.log("Changing quantity for " + this.product.name + " by " + deductBy);
 
-        // TODO: check if quantity is sufficient to deduct
-      
-        this.quantity = this.quantity - deductBy;
+        if (deductBy > this.quantity) { // guarantees quantity will not be negative
+            this.quantity = 0;
+        }
+        else {
+            this.quantity -= deductBy;
+        }
+
         console.log("Changed quantity for " + this.product.name + " to " + this.quantity);
     }
 
@@ -18,16 +22,8 @@ class CartItem {
     }
 
     increaseQuantity(increaseBy) {
-        // TODO: Fill in logic here
-        console.log("Changing quantity for " + this.product.name + " by " + increaseBy);
-
-        this.quantity = this.quantity + increaseBy;
-        console.log("Changed quantity for " + this.product.name + " to " + this.quantity);
-
+        this.quantity += increaseBy;
+        console.log("Quantity increased for: " + this.product.name + "to" + this.quantity);
 
     }
 }
-
-let tracyCart = new CartItem(meat, 1);
-tracyCart.reduceQuantity(2); // 8
-tracyCart.increaseQuantity(4);

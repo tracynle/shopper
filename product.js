@@ -14,5 +14,3 @@ class Product {
         return this.price;
     }
 }
-
-const meat = new Product("beef", "meat", 11122, 10.00);

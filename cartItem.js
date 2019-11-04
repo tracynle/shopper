@@ -21,9 +21,11 @@ class CartItem {
         return this.quantity;
     }
 
+ 
     increaseQuantity(increaseBy) {
         this.quantity += increaseBy;
-        console.log("Quantity increased for: " + this.product.name + "to" + this.quantity);
-
     }
 }
+
+// const milk = new Product(...);
+// new CartItem(milk, 5)
